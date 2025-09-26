@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Blog — Master</title>
+  <meta name="description" content="Blog posts about data science, ML, and deployment." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">Master</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="#posts">Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container" id="posts" role="main">
+    <h1>Blog</h1>
+    <div id="postsList"></div>
+  </main>
+  <footer class="site-footer container">
+    <small>&copy; <span id="year"></span> Master</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    async function loadPosts(){
+      const res = await fetch('assets/js/posts.json');
+      const posts = await res.json();
+      const el = document.getElementById('postsList');
+      el.innerHTML = posts.map(p => `
+        <article>
+          <h2><a href="post.html?slug=${encodeURIComponent(p.slug)}">${p.title}</a></h2>
+          <p class="meta">${p.date} • ${p.readingTime}</p>
+          <p>${p.excerpt}</p>
+        </article>
+      `).join('');
+    }
+    loadPosts();
+  </script>
+</body>
+</html>

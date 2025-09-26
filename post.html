@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog post — Master</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXX');</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">Master</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main" id="postContent">
+    <p>Loading post…</p>
+  </main>
+
+  <footer class="site-footer container">
+    <small>&copy; <span id="year"></span> Master</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    // Parse slug from query params
+    function urlParam(name){
+      const params = new URLSearchParams(location.search);
+      return params.get(name);
+    }
+
+    async function loadPost(){
+      const slug = urlParam('slug');
+      if(!slug){ document.getElementById('postContent').innerHTML = '<p>Post not found.</p>'; return; }
+
+      // Fetch posts.json to find path
+      const list = await fetch('assets/js/posts.json').then(r => r.json());
+      const entry = list.find(p => p.slug === slug);
+      if(!entry){ document.getElementById('postContent').innerHTML = '<p>Post not found.</p>'; return; }
+
+      const md = await fetch(entry.path).then(r => r.text());
+      // Render markdown into the page
+      const html = marked.parse(md);
+      document.getElementById('postContent').innerHTML = `
+        <article class="blog-post">
+          <header><h1>${entry.title}</h1><p class="meta">${entry.date} • ${entry.readingTime || ''}</p></header>
+          <section>${html}</section>
+        </article>
+      `;
+
+      // Inject BlogPosting JSON-LD for SEO
+      const ld = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": entry.title,
+        "datePublished": entry.date,
+        "author": {
+          "@type": "Person",
+          "name": "Master"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": location.href
+        }
+      };
+      const s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.textContent = JSON.stringify(ld);
+      document.head.appendChild(s);
+    }
+
+    loadPost();
+  </script>
+</body>
+</html>
