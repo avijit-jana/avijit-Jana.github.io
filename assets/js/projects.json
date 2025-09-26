@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Real-time Anomaly Detection (Prod)",
+    "description": "Streaming anomaly detection pipeline for monitoring server metrics using Spark, Kafka, and a custom model orchestration layer.",
+    "tech": ["Spark","Kafka","Python","ML"],
+    "domains": ["Monitoring","MLOps"],
+    "image": "assets/images/placeholder-project.jpg",
+    "imageAlt": "Graph visualization of anomalies",
+    "url": "https://github.com/yourusername/anomaly-pipeline",
+    "repo": "https://github.com/yourusername/anomaly-pipeline",
+    "external": true,
+    "date": "2024-09-10"
+  },
+  {
+    "title": "Customer Churn Model",
+    "description": "End-to-end churn modelling with feature engineering, model explainability, and deployment as a REST API.",
+    "tech": ["Python","scikit-learn","Docker"],
+    "domains": ["Customer Analytics"],
+    "image": "assets/images/placeholder-project.jpg",
+    "imageAlt": "Customer churn dashboard screenshot",
+    "url": "projects/churn.html",
+    "repo": "https://github.com/yourusername/churn-project",
+    "external": true,
+    "date": "2023-12-01"
+  },
+  {
+    "title": "Sales Forecasting (time series)",
+    "description": "Multi-horizon sales forecasting using Prophet and LSTM ensembles with uncertainty estimation and automated retraining.",
+    "tech": ["Python","Prophet","TensorFlow"],
+    "domains": ["Forecasting"],
+    "image": "assets/images/placeholder-project.jpg",
+    "imageAlt": "Sales forecast chart",
+    "url": "https://yourusername.github.io/projects/sales-forecast",
+    "repo": "https://github.com/yourusername/sales-forecast",
+    "external": true,
+    "date": "2025-02-20"
+  }
+]

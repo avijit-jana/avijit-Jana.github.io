@@ -1,0 +1,160 @@
+/* assets/css/style.css
+   Mobile-first, accessible, minimalistic theme
+   Variables are at the top for easy theming
+*/
+
+:root{
+  --bg:#ffffff;
+  --surface:#f7f8fb;
+  --content:#0b1a2b;
+  --muted:#6b7280;
+  --primary:#0b6cff;
+  --accent:#00bfa6;
+  --radius:12px;
+  --max-width:1100px;
+  --gap:1rem;
+  --shadow: 0 6px 20px rgba(11,26,43,0.06);
+  --focus: 3px solid rgba(11,108,255,0.15);
+  --transition: 220ms cubic-bezier(.2,.9,.3,1);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+/* Dark theme hook (optional) */
+.theme-dark {
+  --bg: #06111a;
+  --surface: #071420;
+  --content: #e6f0ff;
+  --muted: #9aa7b8;
+  --primary: #5aa8ff;
+}
+
+/* Add this rule to your assets/css/style.css */
+html {
+  /* Set this value to the exact height of your fixed header */
+  scroll-padding-top: 100px; 
+  scroll-behavior: smooth; /* (Optional) Makes the jump look smooth */
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--content);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:16px;
+  padding-top: 80px;
+}
+
+/* Container */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:1.25rem;
+}
+
+/* Accessibility helpers */
+.sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+.skip-link{
+  position:fixed;left:0;top:-40px;background:var(--primary);color:white;padding:.5rem .75rem;border-radius:0 0 var(--radius) 0;z-index:9999;transition:top var(--transition);
+}
+.skip-link:focus{top:0}
+
+/* Header */
+/* .site-header{background:var(--surface);border-bottom:1px solid rgba(11,26,43,0.04);position:sticky;top:0;z-index:50} */
+/* Find this rule around line 90: */
+.site-header{
+  background:var(--surface);
+  border-bottom:1px solid rgba(11,26,43,0.04);
+  position: fixed; /* <-- CHANGE THIS */
+  top: 0;
+  left: 0; /* <-- ADD THIS */
+  right: 0; /* <-- ADD THIS */
+  width: 100%; /* <-- ADD THIS */
+  z-index: 50;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--gap)}
+.brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--content)}
+.brand-img{border-radius:8px;height:48px;width:48px;object-fit:cover}
+.brand-name{font-weight:600}
+a
+.site-nav{display:flex;align-items:center}
+.nav-toggle{display:none;background:none;border:none;padding:.4rem;border-radius:1px}
+.nav-list{display:flex;gap:1rem;list-style:none;padding:0;margin:0}
+.nav-list a{text-decoration:none;color:var(--content);padding:.5rem;border-radius:6px}
+.nav-list a:focus, .nav-list a:hover{outline:none;box-shadow:var(--focus)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr;align-items:center;gap:1rem;padding:2.5rem 1rem}
+.hero-content h1{font-size:clamp(1.6rem, 4vw, 2.4rem);margin:0 0 .5rem}
+.lead{color:var(--muted);margin:0 0 1rem}
+.hero-image img{max-width:450px;border-radius:16px;box-shadow:var(--shadow);width:100%;height:auto}
+
+/* Sections */
+h2{margin-top:0;font-size:1.25rem}
+.about-highlights{display:flex;flex-direction:column;gap:.5rem;padding-left:1rem}
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.skill{display:flex;gap:.75rem;align-items:center;padding:.6rem;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.01), transparent);box-shadow:none}
+.skill i{font-size:1.6rem}
+
+/* Projects */
+.projects-controls{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
+#project-search{padding:.6rem;border-radius:8px;border:1px solid rgba(11,26,43,0.08);min-width:180px}
+.tag-filters{display:flex;gap:.5rem;flex-wrap:wrap}
+.project-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.project-card{display:flex;flex-direction:column;border-radius:12px;padding:1rem;background:var(--surface);box-shadow:var(--shadow);transition:transform var(--transition), box-shadow var(--transition)}
+.project-card:hover{transform:translateY(-6px)}
+.project-media{height:160px;border-radius:8px;overflow:hidden;display:block}
+.project-media img{width:100%;height:100%;object-fit:cover}
+.project-meta{display:flex;justify-content:space-between;align-items:center;margin-top:.75rem}
+.tags{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{padding:.25rem .5rem;border-radius:999px;background:rgba(11,26,43,0.06);font-size:.85rem;cursor:pointer}
+.tag:focus{outline:none;box-shadow:var(--focus)}
+
+/* Blog list */
+.blog-list{display:grid;gap:.75rem}
+
+/* Contact */
+.contact-form{display:grid;gap:.5rem;max-width:640px}
+.contact-form input, .contact-form textarea{padding:.6rem;border-radius:8px;border:1px solid rgba(11,26,43,0.08);font:inherit}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border-radius:10px;border:1px solid transparent;text-decoration:none}
+.btn.primary{background:var(--primary);color:white}
+.btn.outline{background:transparent;border-color:rgba(11,26,43,0.08)}
+.btn:focus{box-shadow:var(--focus)}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(11,26,43,0.04);padding:1rem 0;margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+
+/* Utility */
+kbd{background:rgba(11,26,43,0.06);padding:.1rem .4rem;border-radius:6px;font-size:.9rem}
+
+/* Responsive: medium and up */
+@media(min-width:700px){
+  .hero{grid-template-columns:1fr 420px}
+  .project-grid{grid-template-columns:repeat(2,1fr)}
+  .skill-grid{grid-template-columns:repeat(4,1fr)}
+}
+
+/* Desktop */
+@media(min-width:980px){
+  .project-grid{grid-template-columns:repeat(3,1fr)}
+  .container{padding:1.5rem}
+}
+
+/* Footer social icon styling */
+.site-footer nav a {
+  color: var(--muted); /* Use a muted color for subtlety */
+  font-size: 1.5rem; /* Set a specific size for social icons */
+  padding: .5rem;
+  transition: color var(--transition);
+}
+.site-footer nav a:hover {
+  color: var(--primary); /* Highlight on hover */
+}

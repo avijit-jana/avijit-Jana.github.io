@@ -1,0 +1,11 @@
+[
+  {
+    "title": "First post — Deploying ML on GitHub Pages",
+    "slug": "first-post",
+    "date": "2025-09-01",
+    "excerpt": "How to build and host a static ML portfolio on GitHub Pages with client-side markdown and SEO.",
+    "readingTime": "6 min",
+    "path": "posts/2025-09-01-first-post.md",
+    "tags": ["deployment", "github-pages", "ml"]
+  }
+]
