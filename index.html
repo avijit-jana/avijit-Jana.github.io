@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Basic meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Avijit Jana — Data Scientist | Portfolio</title>
+  <meta name="description" content="Avijit Jana — Data Scientist. Portfolio showcasing data science, machine learning, and analytics projects. I build intelligent systems that deliver impactful solutions. Contact for collaboration or hiring.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://avijit-jana.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Avijit Jana — Data Scientist | Portfolio" />
+  <meta property="og:description" content="Portfolio showcasing data science, machine learning, and analytics projects." />
+  <meta property="og:url" content="https://avijit-jana.github.io/" />
+  <meta property="og:site_name" content="Avijit Jana — Data Scientist" />
+  <meta property="og:image" content="https://avijit-jana.github.io/assets/images/hero.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@avijit_jana" />
+  <meta name="twitter:title" content="Avijit Jana — Data Scientist | Portfolio" />
+  <meta name="twitter:description" content="Portfolio showcasing data science, machine learning, and analytics projects." />
+  <meta name="twitter:image" content="https://avijit-jana.github.io/assets/images/hero.jpg" />
+
+  <!-- SEO: index/follow -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Structured Data (Person + Website) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Avijit Jana",
+    "url": "https://avijit-jana.github.io/",
+    "sameAs": [
+      "https://github.com/avijit-jana",
+      "https://www.linkedin.com/in/avijit-jana"
+    ],
+    "jobTitle": "Data Scientist",
+    "description": "Data Scientist specializing in machine learning, analytics, and production-ready data solutions."
+  }
+  </script>
+
+  <!-- Fonts & Icons (CDN) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZ6VCXzU0YCHh8Q5j1kHqN3e3k3B4p4t2ZlA3L+8yB6R2Wv6nN3F3QW7p3T2k2n4Q7p5N2q7l5w7Q3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />  -->
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Google Analytics (GA4) — Replace MEASUREMENT_ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // <-- Replace with your GA4 ID
+  </script>
+</head>
+<body class="theme-light">
+  <!-- Skip link for keyboard users (accessibility) -->
+  <a class="skip-link" href="#maincontent">Skip to content</a>
+
+  <header class="site-header" role="banner" aria-label="Main header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Homepage">
+        <img src="assets/images/my_pic.png" alt="Avijit Jana professional portrait" class="brand-img" width="48" height="48"/>
+        <span class="brand-name">Avijit Jana</span>
+      </a>
+
+      <nav class="site-nav" role="navigation" aria-label="Primary navigation">
+        <button class="nav-toggle" aria-controls="mainnav" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <ul id="mainnav" class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="maincontent" role="main">
+    <!-- Hero / Landing -->
+    <section class="hero container" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <h1 id="hero-heading">Hi, I'm <strong>Avijit Jana</strong> — Data Scientist</h1>
+        <p class="lead">I build production-ready machine learning systems and data-driven insights. I blend rigorous experimentation with scalable engineering.</p>
+        <p class="hero-cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn outline" href="assets/My_Resume.pdf" aria-label="Download professional resume (PDF)">Download Resume</a>
+        </p>
+      </div>
+      <figure class="hero-image" aria-hidden="true">
+        <img src="assets/images/my_pic.png" alt="Professional portrait of Avijit Jana" loading="lazy">
+      </figure>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>I'm a Data Scientist and Machine Learning Engineer focused on **end-to-end MLOps**, building robust data pipelines, and ensuring model interpretability. I specialize in turning complex, messy data into measurable business value.</p>
+      <ul class="about-highlights" role="list">
+        <li><b>Production ML:</b> Deployment, monitoring, MLOps, Sagemaker/Vertex AI</li>
+        <li><b>Data Engineering:</b> ETL, SQL, Spark</li>
+        <li><b>Interpretability & Experimentation:</b> Casual Inference, A/B testing, SHAP/LIME, Statistical Modeling</li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <div class="skill-grid" role="list">
+        <div class="skill" role="listitem" aria-label="Python">
+          <i class="fa-brands fa-python" aria-hidden="true"></i>
+          <div><strong>Python</strong><small>scikit-learn, pandas, PyTorch</small></div>
+        </div>
+        <div class="skill" role="listitem" aria-label="Data Engineering">
+          <i class="fa-solid fa-database" aria-hidden="true"></i>
+          <div><strong>Data Engineering</strong><small>SQL, Spark, Airflow</small></div>
+        </div>
+        <div class="skill" role="listitem" aria-label="Cloud">
+          <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+          <div><strong>Cloud</strong><small>AWS, GCP, Docker</small></div>
+        </div>
+        <div class="skill" role="listitem" aria-label="Visualization">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          <div><strong>Viz</strong><small>Power BI, Plotly, D3</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects (dynamic) -->
+    <section id="projects" class="container projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Featured Projects</h2>
+
+      <!-- Filters -->
+      <div class="projects-controls" role="region" aria-label="Project filters">
+        <label for="project-search" class="sr-only">Search projects</label>
+        <input id="project-search" type="search" placeholder="Search projects..." aria-label="Search projects" />
+
+        <div class="tag-filters" role="group" aria-label="Filter by tags" id="tagFilters"></div>
+      </div>
+
+      <!-- Grid -->
+      <div id="projectsGrid" class="project-grid" aria-live="polite">
+        <!-- JS renders projects here -->
+      </div>
+
+      <p class="projects-note">Tip: click tags to filter. Press <kbd>Tab</kbd> to focus filter controls.</p>
+    </section>
+
+    <!-- Blog teaser -->
+    <section id="blog" class="container blog" aria-labelledby="blog-heading">
+      <h2 id="blog-heading">Insights & Technical Writing</h2>
+      <div id="blogList" class="blog-list" aria-live="polite">
+        <!-- JS will insert blog post teasers from assets/js/posts.json -->
+      </div>
+      <p><a href="blog.html" class="btn">Read all posts</a></p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Let's Connect</h2>
+      <p>I'm available for collaboration, consulting, or discussion on data science challenges. Email me at <a href="mailto:your.email@example.com">your.email@example.com</a> or use the form below.</p>
+
+      <!-- Simple mailto fallback form: GitHub Pages cannot host server forms, so we provide a mailto fallback and suggestions in a comment for using Formspree / Netlify Forms -->
+      <form class="contact-form" onsubmit="handleContact(event)" aria-label="Contact form">
+        <label for="name">Name</label>
+        <input id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send</button>
+          <a class="btn outline" href="mailto:your.email@example.com?subject=Inquiry">Or email me</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <small>&copy; <span id="year"></span> Avijit Jana — Data Scientist. Built with ❤️ •  All rights reserved. • <a href="/sitemap.xml">Sitemap</a></small>
+      <nav aria-label="Footer social">
+        <a href="https://github.com/avijit-jana" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/avijit-jana" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/avijit_jana" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Minimal accessible focus style helper -->
+  <script>
+    // Set copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Marked (markdown parser) & main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="assets/js/main.js" type="module"></script>
+</body>
+</html>
